@@ -42,13 +42,13 @@ def main():
 				'pyperclip':'pyperclip',
 				'selenium':'selenium',
 				'requests':'requests',
-				'win32api':'pypiwin32',
-				'pypiwin32':'pypiwin32',
-				'Pillow':'Pillow',
-				'mss':'mss',
-				'opencv-python':'opencv-python',
-				'numpy':'numpy',
-				'pytesseract':'pytesseract',
+				# 'win32api':'pypiwin32',
+				# 'pypiwin32':'pypiwin32',
+				# 'Pillow':'Pillow',
+				# 'mss':'mss',
+				# 'opencv-python':'opencv-python',
+				# 'numpy':'numpy',
+				# 'pytesseract':'pytesseract',
 				}
 
 	return chek_libs(list_libr)
