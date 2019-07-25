@@ -35,20 +35,25 @@ def chek_libs(list_libr:dict):
 	if return_list['ERROR'] != []:
 		return return_list
 
+def main():
 
-list_libr = {
-			'pyperclip':'pyperclip',
-			'selenium':'selenium',
-			'requests':'requests',
-			'win32api':'pypiwin32',
-			'pypiwin32':'pypiwin32',
-			'Pillow':'Pillow',
-			'mss':'mss',
-			'opencv-python':'opencv-python',
-			'numpy':'numpy',
-			'pytesseract':'pytesseract',
-			}
+	list_libr = {
+				'pyperclip':'pyperclip',
+				'selenium':'selenium',
+				'requests':'requests',
+				'win32api':'pypiwin32',
+				'pypiwin32':'pypiwin32',
+				'Pillow':'Pillow',
+				'mss':'mss',
+				'opencv-python':'opencv-python',
+				'numpy':'numpy',
+				'pytesseract':'pytesseract',
+				}
+
+	return chek_libs(list_libr)
 
 
-print(chek_libs(list_libr))
-input()
+if __name__ == '__main__':
+	print(main())
+	input()
+
