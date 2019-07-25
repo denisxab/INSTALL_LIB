@@ -29,6 +29,7 @@ def chek_libs(list_libr:dict):
 				return_list['ERROR'].append({x[0]:x[1]})
 
 	os.system('cls')
+	
 	if return_list['ERROR'] == []:
 		return True
 
