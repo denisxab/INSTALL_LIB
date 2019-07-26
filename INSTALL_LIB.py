@@ -31,16 +31,13 @@ def chek_libs(list_libr: dict):
 
         if not x[0] in installed_packages_list:
             res = (insatll_lib(f'{x[1]}'))
-            if not res:
+            if not res: 
                 return_list['ERROR'].append({x[0]: x[1]})
 
-    os.system('cls')
+    # os.system('cls')
+    return True if not return_list['ERROR'] else return_list
 
-    if return_list['ERROR'] == []:
-        return True
 
-    if return_list['ERROR'] != []:
-        return return_list
 #########################################
 
 # Заполнить list_libr
@@ -49,37 +46,33 @@ def chek_libs(list_libr: dict):
 def main_64():  # Windows x64
 
     list_libr = {
-        'pyperclip': 'pyperclip',
-        'selenium': 'selenium',
         'requests': 'requests',
-        # 'pypiwin32':'pypiwin32',
-        # 'Pillow':'Pillow',
-        # 'mss':'mss',
-        # 'opencv-python':'opencv-python',
-        # 'numpy':'numpy',
-        # 'pytesseract':'pytesseract',
     }
 
     return chek_libs(list_libr)
 
 
 def main_32():  # Windows x32
-    list_libr = {}
+    list_libr = {
+        'requests': 'requests',
+    }
     return chek_libs(list_libr)
 
 
 def main_linux():  # Linux
-    list_libr = {}
+    list_libr = {
+        'requests': 'requests',
+    }
     return chek_libs(list_libr)
 
 
 def main_darwin():  # MacOS
-    list_libr = {}
+    list_libr = {
+        'requests': 'requests',
+    }
     return chek_libs(list_libr)
 
-
-if __name__ == '__main__':
-
+def main ():
     """
     Устанавливайте разные библиотеки для разных платформ
     ----------------------------------------------------
@@ -102,4 +95,7 @@ if __name__ == '__main__':
         res = main_darwin()
 
     print(res)
+
+if __name__ == '__main__':
+    main()
     input()
