@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import os
 import re
+import pip._internal.utils.misc as pip
 
 
 def insatll_lib(name:str):
@@ -14,16 +15,18 @@ def insatll_lib(name:str):
 		return False
 
 def chek_libs(list_libr:dict):
-	ASD = os.popen('pip list').read()
-	cash_text = re.findall(re.compile('[^\n-- ]+'), ASD)
+	# ASD = os.popen('pip list').read()
+	# cash_text = re.findall(re.compile('[^\n-- ]+'), ASD)
+	
+	installed_packages_list = sorted(["%s" % i.key for i in pip.get_installed_distributions()])
 	return_list = {'ERROR':[]}
 
 	for x in list_libr.items():
 
-		if x[0] in cash_text[2:]:
+		if x[0] in installed_packages_list:
 			continue
 			
-		if not x[0] in cash_text[2:]:
+		if not x[0] in installed_packages_list:
 			res = (insatll_lib(f'{x[1]}'))
 			if not res:
 				return_list['ERROR'].append({x[0]:x[1]})
@@ -42,7 +45,6 @@ def main():
 				'pyperclip':'pyperclip',
 				'selenium':'selenium',
 				'requests':'requests',
-				# 'win32api':'pypiwin32',
 				# 'pypiwin32':'pypiwin32',
 				# 'Pillow':'Pillow',
 				# 'mss':'mss',
