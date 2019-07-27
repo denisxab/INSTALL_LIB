@@ -1,5 +1,5 @@
 # INSTALL_LIB
-##########################################
+################# ENG #########################
 
 Automatic installation of Python libraries
 
@@ -20,7 +20,7 @@ help(INSTALL_LIB.INSTALL_LIB)
 ```
 
     
-#########################################
+################## RU #######################
 
 Автоматическая установка библиотек Python
 
@@ -34,7 +34,7 @@ import INSTALL_LIB
 if not INSTALL_LIB.INSTALL_LIB({'all':{'requests':'requests'}}):sys.exit()
 ```
 
-<h1>Fill pattern</h1>
+<h1>Образец заполнения</h1>
 
 ```python
 help(INSTALL_LIB.INSTALL_LIB)
