@@ -8,9 +8,14 @@ Fill the dictionary INSTALL_LIB.INSTALL_LIB({}) type 'library name' : 'the comma
 <h1>Test Programm install Libs</h1>
 
 ```python
-import sys
+#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#
 import INSTALL_LIB
-if not INSTALL_LIB.INSTALL_LIB({'all':{'requests':'requests'}}):sys.exit()
+z = INSTALL_LIB.INSTALL_LIB(
+	{'all': {'requests': 'requests'},
+	})
+if not z or isinstance(z, dict): print(z);quit()
+#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#
+
 ```
 
 <h1>Fill pattern</h1>
@@ -29,9 +34,14 @@ help(INSTALL_LIB.INSTALL_LIB)
 <h1>Проверка установленных библиотек</h1>
 
 ```python
-import sys
+#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#
 import INSTALL_LIB
-if not INSTALL_LIB.INSTALL_LIB({'all':{'requests':'requests'}}):sys.exit()
+z = INSTALL_LIB.INSTALL_LIB(
+	{'all': {'requests': 'requests'},
+	})
+if not z or isinstance(z, dict): print(z);quit()
+#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#
+
 ```
 
 <h1>Образец заполнения</h1>
