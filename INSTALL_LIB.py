@@ -41,9 +41,6 @@ def chek_libs(list_libr: dict):
     return True if not return_list['ERROR'] else return_list
 
 
-#########################################
-
-
 def INSTALL_LIB(list_libr: dict):
 
     # print(help(INSTALL_LIB.INSTALL_LIB))
@@ -102,6 +99,7 @@ def INSTALL_LIB(list_libr: dict):
 
     return res
 
+#########################################
 
 if __name__ == '__main__':
     print(INSTALL_LIB({
@@ -111,4 +109,4 @@ if __name__ == '__main__':
         'linux': {'requests': 'requests'},
         'darwin': {'requests': 'requests'},
     }))
-    input()
+
