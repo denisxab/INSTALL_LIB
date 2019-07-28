@@ -45,6 +45,14 @@ def INSTALL_LIB(list_libr: dict):
 
     # print(help(INSTALL_LIB.INSTALL_LIB))
     """
+    #__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#
+    import INSTALL_LIB
+    z = INSTALL_LIB.INSTALL_LIB(
+        {'all': {'requests': 'requests'},
+        })
+    if not z or isinstance(z, dict): print(z);quit()
+    #__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#
+
     {
     'all': {'requests': 'requests'},   # all для всех платформ
     '64bit': {'requests': 'requests'}, # Windows 64bit
