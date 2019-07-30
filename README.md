@@ -8,13 +8,16 @@ Fill the dictionary INSTALL_LIB.INSTALL_LIB({}) type 'library name' : 'the comma
 <h1>Test Programm install Libs</h1>
 
 ```python
-#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#
-import INSTALL_LIB
-z = INSTALL_LIB.INSTALL_LIB(
-	{'all': {'requests': 'requests'},
-	})
-if not z or isinstance(z, dict): print(z);quit()
-#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#
+
+try:
+    ...
+    ....
+    .....
+    
+except ModuleNotFoundError:
+    import INSTALL_LIB
+    INSTALL_LIB.INSTALL_LIB(
+        {'all': {'requests': 'requests', 'vk-api': 'vk-api', }, }, 1)
 
 ```
 
@@ -34,18 +37,16 @@ help(INSTALL_LIB.INSTALL_LIB)
 <h1>Проверка установленных библиотек</h1>
 
 ```python
-#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#
-import INSTALL_LIB
-z = INSTALL_LIB.INSTALL_LIB(
-	{'all': {'requests': 'requests'},
-	})
-if not z or isinstance(z, dict): print(z);quit()
-#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#
+
+try:
+    ...
+    ....
+    .....
+    
+except ModuleNotFoundError:
+    import INSTALL_LIB
+    INSTALL_LIB.INSTALL_LIB(
+        {'all': {'requests': 'requests', 'vk-api': 'vk-api', }, }, 1)
 
 ```
 
-<h1>Образец заполнения</h1>
-
-```python
-help(INSTALL_LIB.INSTALL_LIB)
-```
