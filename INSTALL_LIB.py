@@ -1,15 +1,25 @@
 # -*- coding: utf-8 -*-
+"""
+except ModuleNotFoundError:
+    import INSTALL_LIB
+    INSTALL_LIB.INSTALL_LIB(
+        {'all': {'requests': 'requests', 'vk-api': 'vk-api', }, }, 1)
+"""
+# pylint: disable=C0103
+
+
 import os
+import sys
 import re
 import pip._internal.utils.misc as pip
-import sys
-
-
-#########################################
 
 
 def insatll_lib(name: str):
-    if not isinstance(name, str):return False
+    """
+    Установка библиотек
+    """
+    if not isinstance(name, str):
+        return False
     #____________________________________________#
     command = f'pip install {name}'
     cash_text = re.findall(re.compile('[^\n-- ]+'), os.popen(command).read())
@@ -17,12 +27,15 @@ def insatll_lib(name: str):
     if cash_text[0] == 'Requirement':
         return True
 
-    elif cash_text[0] == 'Collecting':
-        return False
+    return False
 
 
 def chek_libs(list_libr: dict):
-    if not isinstance(list_libr, dict):return False
+    """
+    Поиск в системе библиотек
+    """
+    if not isinstance(list_libr, dict):
+        return False
     #____________________________________________#
     installed_packages_list = sorted(
         ["%s" % i.key for i in pip.get_installed_distributions()])
@@ -41,18 +54,8 @@ def chek_libs(list_libr: dict):
     return True if not return_list['ERROR'] else return_list
 
 
-def INSTALL_LIB(list_libr: dict):
-
-    # print(help(INSTALL_LIB.INSTALL_LIB))
+def INSTALL_LIB(list_libr: dict, regil=0): 
     """
-    #__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#
-    import INSTALL_LIB
-    z = INSTALL_LIB.INSTALL_LIB(
-        {'all': {'requests': 'requests'},
-        })
-    if not z or isinstance(z, dict): print(z);quit()
-    #__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#__#
-
     {
     'all': {'requests': 'requests'},   # all для всех платформ
     '64bit': {'requests': 'requests'}, # Windows 64bit
@@ -62,7 +65,11 @@ def INSTALL_LIB(list_libr: dict):
     }
     """
 
-    if not isinstance(list_libr, dict):return False
+    if not isinstance(list_libr, dict):
+        return False
+
+    if not isinstance(regil, int):
+        return False
 
     #____________________________________________#
     try:
@@ -105,9 +112,17 @@ def INSTALL_LIB(list_libr: dict):
     elif sys.platform == 'darwin':  # MacOS
         res = chek_libs(darwin)
 
-    return res
+    if regil == 0:
+        return res
 
-#########################################
+    if regil == 1:
+        if not res or isinstance(res, dict):
+            print(res)
+            quit()
+        return True
+
+    return False
+
 
 if __name__ == '__main__':
     print(INSTALL_LIB({
@@ -117,4 +132,3 @@ if __name__ == '__main__':
         'linux': {'requests': 'requests'},
         'darwin': {'requests': 'requests'},
     }))
-
